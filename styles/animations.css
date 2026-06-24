@@ -1,0 +1,602 @@
+/* ==========================================================================
+   styles/animations.css
+   The Alchemy of Becoming
+   Premium Animation System
+   ========================================================================== */
+
+/* ==========================================================================
+   ROOT VARIABLES
+   ========================================================================== */
+
+:root {
+  --animation-fast: 150ms;
+  --animation-normal: 300ms;
+  --animation-slow: 600ms;
+  --animation-extra-slow: 1200ms;
+
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================================================
+   FADE ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ==========================================================================
+   SCALE ANIMATIONS
+   ========================================================================== */
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   FLOATING EFFECTS
+   ========================================================================== */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatHorizontal {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(12px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* ==========================================================================
+   ROTATION EFFECTS
+   ========================================================================== */
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* ==========================================================================
+   GLOW EFFECTS
+   ========================================================================== */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px rgba(245, 158, 11, 0.35),
+      0 0 60px rgba(245, 158, 11, 0.15);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 0 rgba(251, 191, 36, 0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 10px rgba(251, 191, 36, 0.5),
+      0 0 30px rgba(251, 191, 36, 0.2);
+  }
+
+  100% {
+    text-shadow: 0 0 0 rgba(251, 191, 36, 0);
+  }
+}
+
+/* ==========================================================================
+   PULSE EFFECTS
+   ========================================================================== */
+
+@keyframes pulseSoft {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseStrong {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   SHIMMER EFFECT
+   ========================================================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ==========================================================================
+   GRADIENT ANIMATION
+   ========================================================================== */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================================================
+   BLUR APPEAR
+   ========================================================================== */
+
+@keyframes blurReveal {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   SPARKLE EFFECT
+   ========================================================================== */
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(180deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   SCROLL INDICATOR
+   ========================================================================== */
+
+@keyframes scrollIndicator {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* ==========================================================================
+   ANIMATION UTILITY CLASSES
+   ========================================================================== */
+
+.animate-fade-in {
+  animation: fadeIn var(--animation-normal)
+    var(--ease-smooth) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--animation-slow)
+    var(--ease-premium) forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--animation-slow)
+    var(--ease-premium) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft var(--animation-slow)
+    var(--ease-premium) forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight var(--animation-slow)
+    var(--ease-premium) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--animation-normal)
+    var(--ease-premium) forwards;
+}
+
+.animate-zoom-in {
+  animation: zoomIn var(--animation-slow)
+    var(--ease-premium) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 10s ease-in-out infinite;
+}
+
+.animate-float-horizontal {
+  animation: floatHorizontal 8s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotateSlow 25s linear infinite;
+}
+
+.animate-rotate-reverse {
+  animation: rotateReverse 25s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+
+.animate-pulse-strong {
+  animation: pulseStrong 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.animate-blur-reveal {
+  animation: blurReveal 0.8s
+    var(--ease-premium) forwards;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s linear infinite;
+}
+
+.animate-scroll-indicator {
+  animation: scrollIndicator 2s ease infinite;
+}
+
+/* ==========================================================================
+   HOVER EFFECTS
+   ========================================================================== */
+
+.hover-lift {
+  transition:
+    transform var(--animation-normal)
+      var(--ease-premium),
+    box-shadow var(--animation-normal)
+      var(--ease-premium);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+.hover-scale {
+  transition: transform
+    var(--animation-normal)
+    var(--ease-premium);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 20px rgba(245, 158, 11, 0.25),
+    0 0 40px rgba(245, 158, 11, 0.15);
+}
+
+/* ==========================================================================
+   STAGGER DELAYS
+   ========================================================================== */
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* ==========================================================================
+   PREMIUM STORYTELLING EFFECTS
+   ========================================================================== */
+
+.story-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #fbbf24,
+    #f59e0b,
+    #fcd34d,
+    #fbbf24
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.story-glow {
+  box-shadow:
+    0 0 30px rgba(245, 158, 11, 0.15),
+    0 0 80px rgba(245, 158, 11, 0.05);
+}
+
+.story-card-hover {
+  transition:
+    transform 0.35s var(--ease-premium),
+    border-color 0.35s var(--ease-premium),
+    box-shadow 0.35s var(--ease-premium);
+}
+
+.story-card-hover:hover {
+  transform: translateY(-8px);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(245, 158, 11, 0.1);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-rotate,
+  .animate-rotate-reverse,
+  .animate-gradient,
+  .animate-shimmer,
+  .animate-glow,
+  .animate-text-glow {
+    animation: none !important;
+  }
+}

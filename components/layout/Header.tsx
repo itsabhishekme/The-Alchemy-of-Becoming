@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import {
   Menu,
   X,
@@ -78,50 +79,216 @@ export default function Header() {
           z-50
           transition-all
           duration-300
-          ${
-            isScrolled
-              ? "border-b border-white/10 bg-black/80 backdrop-blur-xl"
-              : "bg-transparent"
+          ${isScrolled
+            ? "border-b border-white/10 bg-black/80 backdrop-blur-xl"
+            : "bg-transparent"
           }
         `}
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
+            {/* ===========================
+        Brand Logo
+=========================== */}
 
             <Link
               href="/"
-              className="group flex items-center gap-4"
+              className="
+    group
+    relative
+    inline-flex
+    items-center
+    gap-5
+    overflow-hidden
+    rounded-3xl
+    border
+    border-white/10
+    bg-white/5
+    px-5
+    py-4
+    backdrop-blur-xl
+    transition-all
+    duration-500
+    hover:border-amber-400/40
+    hover:bg-white/10
+    hover:shadow-2xl
+    hover:shadow-amber-500/20
+  "
             >
+
+              {/* Background Glow */}
               <div
                 className="
-                  flex
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-gradient-to-br
-                  from-amber-400
-                  to-yellow-500
-                  shadow-lg
-                  shadow-amber-500/20
-                "
+      absolute
+      -left-16
+      top-1/2
+      h-32
+      w-32
+      -translate-y-1/2
+      rounded-full
+      bg-amber-400/10
+      blur-3xl
+      opacity-0
+      transition-all
+      duration-500
+      group-hover:opacity-100
+    "
+              />
+
+              {/* Logo Container */}
+              <div
+                className="
+      relative
+      flex
+      h-16
+      w-16
+      items-center
+      justify-center
+      overflow-hidden
+      rounded-2xl
+      border
+      border-white/20
+      bg-gradient-to-br
+      from-white
+      via-amber-50
+      to-yellow-100
+      shadow-xl
+      shadow-amber-500/20
+      transition-all
+      duration-500
+      group-hover:scale-110
+      group-hover:rotate-3
+    "
               >
-                <Sparkles className="h-6 w-6 text-black" />
+
+                {/* Decorative Ring */}
+                <div
+                  className="
+        absolute
+        inset-0
+        rounded-2xl
+        ring-1
+        ring-amber-300/30
+      "
+                />
+
+                {/* Logo */}
+                <Image
+                  src="/logo.png"
+                  alt="The Alchemy of Becoming Logo"
+                  width={52}
+                  height={52}
+                  priority
+                  className="
+        relative
+        object-contain
+        transition-transform
+        duration-500
+        group-hover:scale-110
+      "
+                />
+
               </div>
 
-              <div className="hidden sm:block">
-                <h2 className="font-heading text-xl font-bold text-white">
+              {/* Brand Content */}
+              <div className="flex flex-col">
+
+                {/* Small Label */}
+                <span
+                  className="
+        text-[11px]
+        uppercase
+        tracking-[0.45em]
+        text-amber-400
+        font-semibold
+      "
+                >
+                  Wellness • Mindfulness
+                </span>
+
+                {/* Brand Name */}
+                <h2
+                  className="
+        mt-1
+        font-heading
+        text-2xl
+        font-black
+        tracking-wide
+        text-white
+        transition-all
+        duration-300
+        group-hover:text-amber-300
+      "
+                >
                   The Alchemy
                 </h2>
 
-                <p className="-mt-1 text-xs text-zinc-400">
+                {/* Subtitle */}
+                <p
+                  className="
+        text-sm
+        text-zinc-400
+        transition-colors
+        duration-300
+        group-hover:text-zinc-300
+      "
+                >
                   of Becoming
                 </p>
-              </div>
-            </Link>
 
+                {/* Decorative Divider */}
+                <div
+                  className="
+        mt-3
+        h-[2px]
+        w-12
+        rounded-full
+        bg-gradient-to-r
+        from-amber-400
+        via-yellow-500
+        to-transparent
+        transition-all
+        duration-500
+        group-hover:w-24
+      "
+                />
+
+              </div>
+
+              {/* Right Arrow */}
+              <div
+                className="
+      hidden
+      lg:flex
+      items-center
+      justify-center
+      rounded-full
+      bg-white/5
+      p-2
+      opacity-0
+      transition-all
+      duration-500
+      group-hover:translate-x-1
+      group-hover:opacity-100
+    "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-amber-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+
+            </Link>
             {/* Desktop Navigation */}
 
             <nav className="hidden items-center gap-2 lg:flex">
@@ -144,10 +311,9 @@ export default function Header() {
                       font-medium
                       transition-all
                       duration-300
-                      ${
-                        active
-                          ? "text-amber-400"
-                          : "text-zinc-300 hover:text-white"
+                      ${active
+                        ? "text-amber-400"
+                        : "text-zinc-300 hover:text-white"
                       }
                     `}
                   >
@@ -295,10 +461,9 @@ export default function Header() {
                         px-4
                         py-3
                         transition
-                        ${
-                          active
-                            ? "bg-amber-500/10 text-amber-400"
-                            : "text-zinc-300 hover:bg-white/5"
+                        ${active
+                          ? "bg-amber-500/10 text-amber-400"
+                          : "text-zinc-300 hover:bg-white/5"
                         }
                       `}
                     >
